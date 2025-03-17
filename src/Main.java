@@ -19,17 +19,20 @@ public class Main {
         return false;
     }
 
+
     /**
      * This method handles account-related actions such as checking balance, depositing, or withdrawing.
      * It ensures that the user inputs a valid option and keeps prompting until valid input is given.
      */
     public static void accountAction() {
         int[] functions = {1, 2, 3}; // Array of valid choices for account actions
-        boolean functionChecker = false; // Tracks if the user input is valid
+        double userBalance = 0.00;
+        boolean functionChecker; // Tracks if the user input is valid
+        boolean actionRepeater = false;
 
         // Display account action menu
         System.out.println("------------------------------------------------------------");
-        System.out.println("What would you like to do?\n1. Check Balance\n2. Deposit\n3. Withdraw");
+        System.out.println("What would you like to do?\n1. Check Balance\n2. Deposit\n3. Withdraw\n4. Exit");
         int userChoice = Integer.parseInt(scanner.nextLine());
 
         // Validate user input
@@ -42,6 +45,37 @@ public class Main {
             userChoice = Integer.parseInt(scanner.nextLine());
             functionChecker = linearSearch(functions, userChoice);
             System.out.println("------------------------------------------------------------");
+        }
+
+        while (!actionRepeater) {
+            switch(userChoice){
+                case 1:
+                    System.out.println("Your balance is now $" + userBalance);
+                    System.out.println("------------------------------------------------------------");
+                    System.out.println("Would you like to do anything else?\n1. Check Balance\n2. Deposit\n3. Withdraw\n4. Exit");
+                    break;
+                case 2:
+                    System.out.println("------------------------------------------------------------");
+                    System.out.println("How much would you like to Withdraw?");
+                    userBalance -= Double.parseDouble(scanner.nextLine());
+                    System.out.println("Your balance is now $" + userBalance);
+                    System.out.println("------------------------------------------------------------");
+                    System.out.println("Would you like to do anything else?\n1. Check Balance\n2. Deposit\n3. Withdraw\n4. Exit");
+                    userChoice = Integer.parseInt(scanner.nextLine());
+                    break;
+                case 3:
+                    System.out.println("------------------------------------------------------------");
+                    System.out.println("How much would you like to Withdraw?");
+                    userBalance -= Double.parseDouble(scanner.nextLine());
+                    System.out.println("Your balance is now $" + userBalance);
+                    System.out.println("------------------------------------------------------------");
+                    System.out.println("Would you like to do anything else?\n1. Check Balance\n2. Deposit\n3. Withdraw\n4. Exit");
+                    userChoice = Integer.parseInt(scanner.nextLine());
+                    break;
+                case 4:
+                    System.out.println("Thank you for using this program");
+                    actionRepeater = true;
+            }
         }
     }
 
