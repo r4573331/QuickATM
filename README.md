@@ -38,12 +38,6 @@ The program includes:
 - Java Development Kit (JDK) 8 or higher.  
 - Basic knowledge of Java to edit or customize the code.
 
-## Why This Project?
-If you're just starting with Java or want to brush up on coding basics, this is perfect! It covers:
-- User input handling.  
-- Loops and conditional logic.  
-- Method creation and calling.
-
 ---
 
 Feel free to tweak the project as much as you want. Go ahead, make it your own! If you have ideas for improvements or run into issues, let me know! ✌️
